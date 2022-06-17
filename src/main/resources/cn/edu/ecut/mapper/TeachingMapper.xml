@@ -5,4 +5,7 @@
 
 <mapper namespace="cn.edu.ecut.mapper.TeachingMapper">
 
+    <select id="SelectExcellentTC" resultType="cn.edu.ecut.dataType.TeachingEffectExcellent">
+        select * from ExcellentEffect
+    </select>
 </mapper>

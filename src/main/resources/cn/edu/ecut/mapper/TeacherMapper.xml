@@ -5,4 +5,7 @@
 
 <mapper namespace="cn.edu.ecut.mapper.TeacherMapper">
 
+    <select id="CourseByTeacherName" resultType="cn.edu.ecut.dataType.TeacherTeaching">
+        {call CourseByTeacherName(#{TeacherName,mode=IN})}
+    </select>
 </mapper>
