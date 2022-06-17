@@ -1,4 +1,4 @@
 package cn.edu.ecut.mapper;
 
-public class StudentEvaluationMapper {
+public interface StudentEvaluationMapper {
 }

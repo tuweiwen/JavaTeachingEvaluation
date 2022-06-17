@@ -28,4 +28,13 @@ public class Student {
     public void setClassNumber(String classNumber) {
         ClassNumber = classNumber;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "StudentID='" + StudentID + '\'' +
+                ", StudentName='" + StudentName + '\'' +
+                ", ClassNumber='" + ClassNumber + '\'' +
+                '}';
+    }
 }

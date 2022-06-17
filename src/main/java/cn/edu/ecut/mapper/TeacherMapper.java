@@ -1,4 +1,4 @@
 package cn.edu.ecut.mapper;
 
-public class TeacherMapper {
+public interface TeacherMapper {
 }

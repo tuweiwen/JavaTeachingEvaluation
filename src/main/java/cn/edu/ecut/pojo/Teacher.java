@@ -66,4 +66,17 @@ public class Teacher {
     public void setDepartment(String department) {
         Department = department;
     }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "TeacherID='" + TeacherID + '\'' +
+                ", TeacherName='" + TeacherName + '\'' +
+                ", Gender='" + Gender + '\'' +
+                ", Birthday=" + Birthday +
+                ", Title='" + Title + '\'' +
+                ", ParticipateDate=" + ParticipateDate +
+                ", Department='" + Department + '\'' +
+                '}';
+    }
 }

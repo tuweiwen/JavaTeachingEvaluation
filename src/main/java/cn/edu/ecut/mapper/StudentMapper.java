@@ -1,4 +1,9 @@
 package cn.edu.ecut.mapper;
 
-public class StudentMapper {
+import cn.edu.ecut.pojo.Student;
+
+import java.util.List;
+
+public interface StudentMapper {
+    List<Student> getStudentById(String ID);
 }

@@ -37,4 +37,14 @@ public class Course {
     public void setAttribute(String attribute) {
         Attribute = attribute;
     }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "CourseID='" + CourseID + '\'' +
+                ", CourseName='" + CourseName + '\'' +
+                ", Credit=" + Credit +
+                ", Attribute='" + Attribute + '\'' +
+                '}';
+    }
 }

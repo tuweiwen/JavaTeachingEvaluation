@@ -28,4 +28,13 @@ public class Teaching {
     public void setEffect(String effect) {
         Effect = effect;
     }
+
+    @Override
+    public String toString() {
+        return "Teaching{" +
+                "TeacherID='" + TeacherID + '\'' +
+                ", CourseID='" + CourseID + '\'' +
+                ", Effect='" + Effect + '\'' +
+                '}';
+    }
 }

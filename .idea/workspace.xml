@@ -4,29 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5d39679-6385-4a84-ae7e-3530278aecc6" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/CourseMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/StudentEvaluationMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/StudentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/TeacherMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/TeachingMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/pojo/Course.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/pojo/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/pojo/StudentEvaluation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/pojo/Teacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/pojo/Teaching.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cn/edu/ecut/mapper/CourseMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cn/edu/ecut/mapper/StudentEvaluationMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cn/edu/ecut/mapper/StudentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cn/edu/ecut/mapper/TeacherMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cn/edu/ecut/mapper/TeachingMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+    <list default="true" id="c5d39679-6385-4a84-ae7e-3530278aecc6" name="变更" comment="create DBConnectionTest, fix wrong syntax(using interface not class) and add toString method in pojo.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/projectWin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/edu/ecut/SqlTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/CourseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/CourseMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/StudentEvaluationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/StudentEvaluationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/StudentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/StudentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/TeacherMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/TeacherMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/TeachingMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/TeachingMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/pojo/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/pojo/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/pojo/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/pojo/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/pojo/StudentEvaluation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/pojo/StudentEvaluation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/pojo/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/pojo/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/pojo/Teaching.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/pojo/Teaching.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cn/edu/ecut/mapper/StudentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cn/edu/ecut/mapper/StudentMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,18 +45,63 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_directory_selection": "C:/Users/tuwei/IdeaProjects/JavaTeachingEvaluation/src/main/java/cn/edu/ecut",
+    "last_opened_file_path": "C:/Users/tuwei/IdeaProjects/JavaTeachingEvaluation/src/main/resources/cn/edu/ecut/mapper/TeachingMapper.xml",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlserver"
+    ]
   }
-}</component>
+}]]></component>
+  <component name="RunManager" selected="JUnit.SqlTest.testConnection">
+    <configuration name="projectWin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ecut.projectWin" />
+      <module name="JavaTeachingEvaluation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.edu.ecut.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SqlTest.testConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaTeachingEvaluation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.edu.ecut.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.edu.ecut" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ecut.SqlTest" />
+      <option name="METHOD_NAME" value="testConnection" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SqlTest.testConnection" />
+        <item itemvalue="应用程序.cn.edu.ecut.projectWin" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -74,8 +112,18 @@
       <updated>1655278740310</updated>
       <workItem from="1655278744314" duration="1762000" />
       <workItem from="1655294034869" duration="824000" />
-      <workItem from="1655295034484" duration="463000" />
+      <workItem from="1655295034484" duration="6497000" />
+      <workItem from="1655360282393" duration="2499000" />
+      <workItem from="1655447164436" duration="2088000" />
     </task>
+    <task id="LOCAL-00001" summary="init project and setting the fundamental pojo&amp;mapper for the object in db">
+      <created>1655295584872</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1655295584872</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,5 +139,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init project and setting the fundamental pojo&amp;mapper for the object in db" />
+    <MESSAGE value="create DBConnectionTest, fix wrong syntax(using interface not class) and add toString method in pojo." />
+    <option name="LAST_COMMIT_MESSAGE" value="create DBConnectionTest, fix wrong syntax(using interface not class) and add toString method in pojo." />
   </component>
 </project>

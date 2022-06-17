@@ -38,4 +38,14 @@ public class StudentEvaluation {
     }
 
     private Double Point;
+
+    @Override
+    public String toString() {
+        return "StudentEvaluation{" +
+                "StudentID='" + StudentID + '\'' +
+                ", TeacherID='" + TeacherID + '\'' +
+                ", CourseID='" + CourseID + '\'' +
+                ", Point=" + Point +
+                '}';
+    }
 }

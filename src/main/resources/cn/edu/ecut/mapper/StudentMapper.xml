@@ -5,4 +5,11 @@
 
 <mapper namespace="cn.edu.ecut.mapper.StudentMapper">
 
+    <select id="getStudentById" resultType="cn.edu.ecut.pojo.Student">
+        select *
+        from Student
+        <where>
+            StudentID = #{ID}
+        </where>
+    </select>
 </mapper>
