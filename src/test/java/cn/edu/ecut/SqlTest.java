@@ -18,7 +18,6 @@ import java.util.Collections;
 import java.util.List;
 
 public class SqlTest {
-
     @Test
     public void testConnection() throws IOException{
         String mybatisConfig = "mybatis-config.xml";
