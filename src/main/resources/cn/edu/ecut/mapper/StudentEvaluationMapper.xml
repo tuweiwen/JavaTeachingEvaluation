@@ -5,4 +5,7 @@
 
 <mapper namespace="cn.edu.ecut.mapper.StudentEvaluationMapper">
 
+    <select id="SelectAll" resultType="cn.edu.ecut.dataType.StudentEvaluation">
+        select * from StudentEvaluation;
+    </select>
 </mapper>

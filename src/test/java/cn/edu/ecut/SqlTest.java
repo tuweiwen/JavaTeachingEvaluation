@@ -40,7 +40,7 @@ public class SqlTest {
 
         SqlSession session  = fac.openSession();
         TeacherMapper teacherMapper = session.getMapper(TeacherMapper.class);
-        List<TeacherTeaching> tt = Collections.singletonList(teacherMapper.CourseByTeacherName("江霞"));
+        List<TeacherTeaching> tt = teacherMapper.CourseByTeacherName("江霞");
 
         System.out.println(tt);
         session.close();
@@ -54,7 +54,7 @@ public class SqlTest {
 
         SqlSession session  = fac.openSession();
         TeachingMapper teachingMapper = session.getMapper(TeachingMapper.class);
-        List<TeachingEffectExcellent> te = Collections.singletonList(teachingMapper.SelectExcellentTC());
+        List<TeachingEffectExcellent> te = teachingMapper.SelectExcellentTC();
 
         System.out.println(te);
         session.close();
