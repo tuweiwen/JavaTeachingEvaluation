@@ -28,6 +28,7 @@ public class projectWin{
     TeachingEffectExcellentTM teachingEffectExcellentTM = new TeachingEffectExcellentTM();
     TeacherTeachingTM teacherTeachingTM = new TeacherTeachingTM();
     StudentEvaluationTM studentEvaluationTM = new StudentEvaluationTM();
+    StudentPointAvgTM studentPointAvgTM = new StudentPointAvgTM();
 
     public void init(SqlSession session) {
         // menuItem 监听
@@ -47,22 +48,26 @@ public class projectWin{
         List<TeacherTeaching> teacherTeachingList = teacherMapper.CourseByTeacherName(courseByTeacherNameKey);
         List<TeachingEffectExcellent> teachingEffectExcellentList = teachingMapper.SelectExcellentTC();
         List<StudentEvaluation> studentEvaluationList = studentEvaluationMapper.SelectAll();
+        List<StudentPointAvg> studentPointAvgList = studentEvaluationMapper.selectStudentPointAvg("2019213490");
 
         teachingEffectExcellentTM = new TeachingEffectExcellentTM(teachingEffectExcellentList);
         teacherTeachingTM = new TeacherTeachingTM(teacherTeachingList);
         studentEvaluationTM = new StudentEvaluationTM(studentEvaluationList);
+        studentPointAvgTM = new StudentPointAvgTM(studentPointAvgList);
 
         JTable teachingEffectExcellentTable = new JTable(teachingEffectExcellentTM);
         JTable teacherTeachingTable = new JTable(teacherTeachingTM);
         JTable studentEvaluationTable = new JTable(studentEvaluationTM);
+        JTable studentPointAvgTable = new JTable(studentPointAvgTM);
 
         // TAB1 Panel
+
         JPanel teacherTeachingPanel = new JPanel(new BorderLayout());
         Box teacherTeachingPanelNorth = Box.createHorizontalBox();
         JLabel teacherNameInputHintLabel = new JLabel("教师名称：");
         JTextField teacherNameInput = new JTextField();
-        JButton searchButton = new JButton("搜索");
-        searchButton.addActionListener(
+        JButton teacherTeachingSB = new JButton("搜索");
+        teacherTeachingSB.addActionListener(
                 e -> {
                     teacherTeachingTM = new TeacherTeachingTM(teacherMapper.CourseByTeacherName(
                             teacherNameInput.getText()));
@@ -74,10 +79,11 @@ public class projectWin{
         teacherTeachingPanelNorth.add(Box.createHorizontalStrut(10));
         teacherTeachingPanelNorth.add(teacherNameInput);
         teacherTeachingPanelNorth.add(Box.createHorizontalStrut(10));
-        teacherTeachingPanelNorth.add(searchButton);
+        teacherTeachingPanelNorth.add(teacherTeachingSB);
         teacherTeachingPanel.add(teacherTeachingPanelNorth, BorderLayout.NORTH);
         teacherTeachingPanel.add(new JScrollPane(teacherTeachingTable), BorderLayout.CENTER);
         // 结束
+
 
         // Tab2 Panel
         JPanel studentEvaluationPanel = new JPanel(new BorderLayout());
@@ -89,7 +95,7 @@ public class projectWin{
         studentEvaluationUpdate.addActionListener(e -> {
             // 获取行数
             int rowIndex = studentEvaluationTable.getSelectedRow();
-            if(rowIndex == -1) {
+            if (rowIndex == -1) {
                 // System.out.println("请选择数据");
                 return;
             }
@@ -137,9 +143,9 @@ public class projectWin{
             JButton updateButton = new JButton("确认");
             updateButton.addActionListener(e12 -> {
                 Double newPointValue;
-                try{
+                try {
                     newPointValue = Double.parseDouble(pointTF.getText());
-                }catch (NumberFormatException exception) {
+                } catch (NumberFormatException exception) {
                     JOptionPane.showMessageDialog(updateDataFrame, "请不要在评分框内输入非法数值！\n" +
                             "(例如 : 非数字字符，空值等)", "错误", JOptionPane.ERROR_MESSAGE);
                     return;
@@ -184,22 +190,22 @@ public class projectWin{
         });
         JButton studentEvaluationDelete = new JButton("删除");
         studentEvaluationDelete.addActionListener(e -> {
-                int rowIndex = studentEvaluationTable.getSelectedRow();
-                if (rowIndex == -1) {
-                    return;
-                }
+                    int rowIndex = studentEvaluationTable.getSelectedRow();
+                    if (rowIndex == -1) {
+                        return;
+                    }
 
-                StudentEvaluation selectItem = studentEvaluationTM.getListItem(rowIndex);
+                    StudentEvaluation selectItem = studentEvaluationTM.getListItem(rowIndex);
 
-                int confirmDelete = JOptionPane.showConfirmDialog(frame, "确认删除该条记录吗？", "警告",
-                        JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
-                if (confirmDelete == JOptionPane.YES_OPTION) {
-                    studentEvaluationMapper.deleteItem(selectItem.getStudentID(), selectItem.getCourseID(),
-                            selectItem.getTeacherID());
-                    studentEvaluationTM = new StudentEvaluationTM(studentEvaluationMapper.SelectAll());
-                    studentEvaluationTable.setModel(studentEvaluationTM);
+                    int confirmDelete = JOptionPane.showConfirmDialog(frame, "确认删除该条记录吗？", "警告",
+                            JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+                    if (confirmDelete == JOptionPane.YES_OPTION) {
+                        studentEvaluationMapper.deleteItem(selectItem.getStudentID(), selectItem.getCourseID(),
+                                selectItem.getTeacherID());
+                        studentEvaluationTM = new StudentEvaluationTM(studentEvaluationMapper.SelectAll());
+                        studentEvaluationTable.setModel(studentEvaluationTM);
+                    }
                 }
-            }
         );
         studentEvaluationNorth.add(studentEvaluationInsert);
         studentEvaluationNorth.add(studentEvaluationUpdate);
@@ -208,12 +214,37 @@ public class projectWin{
         studentEvaluationPanel.add(new JScrollPane(studentEvaluationTable));
         // 结束
 
+
+        // Tab3 Panel
+        JPanel studentPointAvgPanel = new JPanel(new BorderLayout());
+        Box studentPointAvgPanelNorth = Box.createHorizontalBox();
+        JLabel studentIdInputHintLabel = new JLabel("学生ID：");
+        JTextField studentIdInput = new JTextField();
+        JButton studentIdSB = new JButton("搜索");
+        studentIdSB.addActionListener(
+                e -> {
+                    studentPointAvgTM = new StudentPointAvgTM(studentEvaluationMapper.
+                            selectStudentPointAvg(studentIdInput.getText()));
+                    studentPointAvgTable.setModel(studentPointAvgTM);
+                }
+        );
+
+        studentPointAvgPanelNorth.add(studentIdInputHintLabel);
+        studentPointAvgPanelNorth.add(Box.createHorizontalStrut(10));
+        studentPointAvgPanelNorth.add(studentIdInput);
+        studentPointAvgPanelNorth.add(Box.createHorizontalStrut(10));
+        studentPointAvgPanelNorth.add(studentIdSB);
+
+        studentPointAvgPanel.add(studentPointAvgPanelNorth, BorderLayout.NORTH);
+        studentPointAvgPanel.add(new JScrollPane(studentPointAvgTable), BorderLayout.CENTER);
+
         // Tab0
         tabbedPane.addTab("授课效果优秀的教师(视图)", new JScrollPane(teachingEffectExcellentTable));
         // Tab1
         tabbedPane.addTab("教师课程查询(存储过程)", teacherTeachingPanel);
         // Tab2
         tabbedPane.addTab("学生评教信息(触发器)", studentEvaluationPanel);
+        tabbedPane.addTab("查询学生平均评分(函数)", studentPointAvgPanel);
         tabbedPane.setSelectedIndex(0);
 
         frame.add(tabbedPane);

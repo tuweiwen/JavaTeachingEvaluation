@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5d39679-6385-4a84-ae7e-3530278aecc6" name="变更" comment="modify return type in Mapper and finished two features in mainWindow">
+    <list default="true" id="c5d39679-6385-4a84-ae7e-3530278aecc6" name="变更" comment="adding update&amp;delete data in table 'StudentEvaluation' feature.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/dataType/StudentPointAvg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/dataType/StudentPointAvgTM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/dataType/StudentEvaluationTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/dataType/StudentEvaluationTM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/StudentEvaluationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/StudentEvaluationMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/TeacherMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/TeacherMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/projectWin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/projectWin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/util/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/util/Session.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/cn/edu/ecut/mapper/StudentEvaluationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cn/edu/ecut/mapper/StudentEvaluationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cn/edu/ecut/mapper/TeacherMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cn/edu/ecut/mapper/TeacherMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,26 +37,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_directory_selection": "C:/Users/tuwei/IdeaProjects/JavaTeachingEvaluation/src/main/java/cn/edu/ecut",
-    "last_opened_file_path": "C:/Users/tuwei/IdeaProjects/JavaTeachingEvaluation/src/main/resources/cn/edu/ecut/mapper/TeachingMapper.xml",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/tuwei/IdeaProjects/JavaTeachingEvaluation/src/main/java/cn/edu/ecut&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tuwei/IdeaProjects/JavaTeachingEvaluation/src/main/resources/cn/edu/ecut/mapper/TeachingMapper.xml&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlserver"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="cn.edu.ecut" />
@@ -167,7 +165,8 @@
       <workItem from="1655470453347" duration="5039000" />
       <workItem from="1655477638709" duration="8239000" />
       <workItem from="1655529452140" duration="18724000" />
-      <workItem from="1655609029560" duration="11754000" />
+      <workItem from="1655609029560" duration="13156000" />
+      <workItem from="1655645831105" duration="1865000" />
     </task>
     <task id="LOCAL-00001" summary="init project and setting the fundamental pojo&amp;mapper for the object in db">
       <created>1655295584872</created>
@@ -204,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655564260619</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="adding update&amp;delete data in table 'StudentEvaluation' feature.">
+      <created>1655630354969</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1655630354969</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +233,8 @@
     <MESSAGE value="improved the pojo class, provided some Mapper methods, and wrote some tests" />
     <MESSAGE value="Completed TableModel, and used it to implement the data binding with JTable, and make the data display on the main Frame" />
     <MESSAGE value="modify return type in Mapper and finished two features in mainWindow" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify return type in Mapper and finished two features in mainWindow" />
+    <MESSAGE value="adding update&amp;delete data in table 'StudentEvaluation' feature." />
+    <option name="LAST_COMMIT_MESSAGE" value="adding update&amp;delete data in table 'StudentEvaluation' feature." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -18,6 +18,10 @@
         select * from StudentEvaluation;
     </select>
 
+    <select id="selectStudentPointAvg" resultType="cn.edu.ecut.dataType.StudentPointAvg">
+        select * from studentPointAvg(#{StudentID})
+    </select>
+
     <delete id="deleteItem">
         delete from StudentEvaluation where StudentID = #{StudentID} and CourseID = #{CourseID}
                                         and TeacherID = #{TeacherID}
