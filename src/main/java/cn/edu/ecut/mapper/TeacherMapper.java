@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface TeacherMapper {
     List<TeacherTeaching> CourseByTeacherName(String TeacherName);
+    List<TeacherTeaching> SelectAll();
 }

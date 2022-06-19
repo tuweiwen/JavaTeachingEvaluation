@@ -11,6 +11,6 @@ public class Session {
     public static SqlSession getSession() throws IOException {
         String mybatisConfig = "mybatis-config.xml";
         InputStream iStream = Resources.getResourceAsStream(mybatisConfig);
-        return new SqlSessionFactoryBuilder().build(iStream).openSession();
+        return new SqlSessionFactoryBuilder().build(iStream).openSession(true);
     }
 }

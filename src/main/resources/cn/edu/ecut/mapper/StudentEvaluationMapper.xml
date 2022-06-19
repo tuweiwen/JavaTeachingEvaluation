@@ -4,8 +4,22 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="cn.edu.ecut.mapper.StudentEvaluationMapper">
+    <update id="updateValue">
+        update StudentEvaluation
+            <set>
+                <if test="Point != null">Point = #{Point}</if>
+            </set>
+        <where>
+            StudentID = #{StudentID} and CourseID = #{CourseID} and TeacherID = #{TeacherID}
+        </where>
+    </update>
 
     <select id="SelectAll" resultType="cn.edu.ecut.dataType.StudentEvaluation">
         select * from StudentEvaluation;
     </select>
+
+    <delete id="deleteItem">
+        delete from StudentEvaluation where StudentID = #{StudentID} and CourseID = #{CourseID}
+                                        and TeacherID = #{TeacherID}
+    </delete>
 </mapper>

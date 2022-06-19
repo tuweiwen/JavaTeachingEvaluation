@@ -8,4 +8,8 @@
     <select id="CourseByTeacherName" resultType="cn.edu.ecut.dataType.TeacherTeaching">
         {call CourseByTeacherName(#{TeacherName,mode=IN})}
     </select>
+
+    <select id="SelectAll" resultType="cn.edu.ecut.dataType.TeacherTeaching">
+        select * from Teacher;
+    </select>
 </mapper>

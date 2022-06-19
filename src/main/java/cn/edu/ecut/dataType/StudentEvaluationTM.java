@@ -15,6 +15,10 @@ public class StudentEvaluationTM extends AbstractTableModel {
         valueList = list;
     }
 
+    public StudentEvaluation getListItem(int itemIndex){
+        return valueList.get(itemIndex);
+    }
+
     @Override
     public int getRowCount() {
         return valueList.size();
@@ -61,4 +65,6 @@ public class StudentEvaluationTM extends AbstractTableModel {
         }
         return null;
     }
+
+
 }
