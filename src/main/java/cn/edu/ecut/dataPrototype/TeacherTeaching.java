@@ -1,4 +1,4 @@
-package cn.edu.ecut.dataType;
+package cn.edu.ecut.dataPrototype;
 
 public class TeacherTeaching {
     private String CourseID;

@@ -1,6 +1,6 @@
 package cn.edu.ecut.mapper;
 
-import cn.edu.ecut.dataType.TeacherTeaching;
+import cn.edu.ecut.dataPrototype.TeacherTeaching;
 
 import java.util.List;
 

@@ -5,11 +5,11 @@
 
 <mapper namespace="cn.edu.ecut.mapper.TeacherMapper">
 
-    <select id="CourseByTeacherName" resultType="cn.edu.ecut.dataType.TeacherTeaching">
+    <select id="CourseByTeacherName" resultType="cn.edu.ecut.dataPrototype.TeacherTeaching">
         {call CourseByTeacherName(#{TeacherName,mode=IN})}
     </select>
 
-    <select id="SelectAll" resultType="cn.edu.ecut.dataType.TeacherTeaching">
+    <select id="SelectAll" resultType="cn.edu.ecut.dataPrototype.TeacherTeaching">
         select * from Teacher;
     </select>
 </mapper>

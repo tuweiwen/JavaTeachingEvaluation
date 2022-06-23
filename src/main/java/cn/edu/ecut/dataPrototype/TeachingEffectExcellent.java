@@ -1,4 +1,4 @@
-package cn.edu.ecut.dataType;
+package cn.edu.ecut.dataPrototype;
 
 public class TeachingEffectExcellent {
     private String TeacherID;

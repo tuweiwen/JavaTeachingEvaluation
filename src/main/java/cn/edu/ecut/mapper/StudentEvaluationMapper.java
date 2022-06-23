@@ -1,7 +1,7 @@
 package cn.edu.ecut.mapper;
 
-import cn.edu.ecut.dataType.StudentEvaluation;
-import cn.edu.ecut.dataType.StudentPointAvg;
+import cn.edu.ecut.dataPrototype.StudentEvaluation;
+import cn.edu.ecut.dataPrototype.StudentPointAvg;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

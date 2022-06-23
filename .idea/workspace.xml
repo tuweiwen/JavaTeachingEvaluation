@@ -4,14 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5d39679-6385-4a84-ae7e-3530278aecc6" name="变更" comment="adding update&amp;delete data in table 'StudentEvaluation' feature.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/dataType/StudentPointAvg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/dataType/StudentPointAvgTM.java" afterDir="false" />
+    <list default="true" id="c5d39679-6385-4a84-ae7e-3530278aecc6" name="变更" comment="add query StudentPointAvg feature.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/viewUtil/SingleInputSearchTableView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/dataType/StudentEvaluation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/dataPrototype/StudentEvaluation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/dataType/StudentEvaluationTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/tableModel/StudentEvaluationTM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/dataType/StudentPointAvg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/dataPrototype/StudentPointAvg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/dataType/StudentPointAvgTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/tableModel/StudentPointAvgTM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/dataType/TeacherTeaching.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/dataPrototype/TeacherTeaching.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/dataType/TeacherTeachingTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/tableModel/TeacherTeachingTM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/dataType/TeachingEffectExcellent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/dataPrototype/TeachingEffectExcellent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/dataType/TeachingEffectExcellentTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/tableModel/TeachingEffectExcellentTM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/StudentEvaluationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/StudentEvaluationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/TeacherMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/TeacherMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/TeachingMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/mapper/TeachingMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/projectWin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecut/projectWin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/cn/edu/ecut/mapper/StudentEvaluationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cn/edu/ecut/mapper/StudentEvaluationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cn/edu/ecut/mapper/TeacherMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cn/edu/ecut/mapper/TeacherMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cn/edu/ecut/mapper/TeachingMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cn/edu/ecut/mapper/TeachingMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cn/edu/ecut/SqlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/edu/ecut/SqlTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,26 +48,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/tuwei/IdeaProjects/JavaTeachingEvaluation/src/main/java/cn/edu/ecut&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tuwei/IdeaProjects/JavaTeachingEvaluation/src/main/resources/cn/edu/ecut/mapper/TeachingMapper.xml&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_directory_selection": "C:/Users/tuwei/IdeaProjects/JavaTeachingEvaluation/src/main/java/cn/edu/ecut",
+    "last_opened_file_path": "C:/Users/tuwei/IdeaProjects/JavaTeachingEvaluation/src/main/resources/cn/edu/ecut/mapper/TeachingMapper.xml",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlserver&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlserver"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="cn.edu.ecut" />
@@ -166,7 +177,19 @@
       <workItem from="1655477638709" duration="8239000" />
       <workItem from="1655529452140" duration="18724000" />
       <workItem from="1655609029560" duration="13156000" />
-      <workItem from="1655645831105" duration="1865000" />
+      <workItem from="1655645831105" duration="2745000" />
+      <workItem from="1655649293369" duration="208000" />
+      <workItem from="1655651031789" duration="1117000" />
+      <workItem from="1655704538705" duration="348000" />
+      <workItem from="1655705683419" duration="109000" />
+      <workItem from="1655806490222" duration="889000" />
+      <workItem from="1655811209645" duration="1221000" />
+      <workItem from="1655869824889" duration="3260000" />
+      <workItem from="1655881901761" duration="609000" />
+      <workItem from="1655949418116" duration="703000" />
+      <workItem from="1655951012053" duration="95000" />
+      <workItem from="1655951245150" duration="115000" />
+      <workItem from="1655959544021" duration="4685000" />
     </task>
     <task id="LOCAL-00001" summary="init project and setting the fundamental pojo&amp;mapper for the object in db">
       <created>1655295584872</created>
@@ -210,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655630354969</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add query StudentPointAvg feature.">
+      <created>1655647995732</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1655647995732</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,7 +264,8 @@
     <MESSAGE value="Completed TableModel, and used it to implement the data binding with JTable, and make the data display on the main Frame" />
     <MESSAGE value="modify return type in Mapper and finished two features in mainWindow" />
     <MESSAGE value="adding update&amp;delete data in table 'StudentEvaluation' feature." />
-    <option name="LAST_COMMIT_MESSAGE" value="adding update&amp;delete data in table 'StudentEvaluation' feature." />
+    <MESSAGE value="add query StudentPointAvg feature." />
+    <option name="LAST_COMMIT_MESSAGE" value="add query StudentPointAvg feature." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -245,5 +276,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -1,21 +1,20 @@
 package cn.edu.ecut;
 
-import cn.edu.ecut.dataType.*;
-import cn.edu.ecut.mapper.StudentEvaluationMapper;
-import cn.edu.ecut.mapper.TeacherMapper;
-import cn.edu.ecut.mapper.TeachingMapper;
+import cn.edu.ecut.dataPrototype.*;
+import cn.edu.ecut.tableModel.*;
+import cn.edu.ecut.mapper.*;
 import cn.edu.ecut.util.Session;
+import cn.edu.ecut.viewUtil.SingleInputSearchTableView;
 import org.apache.ibatis.session.SqlSession;
 
+import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import java.awt.*;
 import java.io.IOException;
 import java.util.List;
 
 public class projectWin{
     JFrame frame = new JFrame("评教系统(Beta)");
-
     JMenuBar menuBar = new JMenuBar();
     JMenu window = new JMenu("窗口");
     JMenu help = new JMenu("帮助");
@@ -23,7 +22,7 @@ public class projectWin{
     JMenuItem about = new JMenuItem("关于");
     JTabbedPane tabbedPane = new JTabbedPane(SwingConstants.LEFT, JTabbedPane.SCROLL_TAB_LAYOUT);
 
-    // 数据
+    // TableModel&Data
     String courseByTeacherNameKey = "江霞";
     TeachingEffectExcellentTM teachingEffectExcellentTM = new TeachingEffectExcellentTM();
     TeacherTeachingTM teacherTeachingTM = new TeacherTeachingTM();
@@ -42,26 +41,30 @@ public class projectWin{
         menuBar.add(help);
         frame.setJMenuBar(menuBar);
 
+        // get mapper(for using sql function)
         TeacherMapper teacherMapper = session.getMapper(TeacherMapper.class);
         TeachingMapper teachingMapper = session.getMapper(TeachingMapper.class);
         StudentEvaluationMapper studentEvaluationMapper = session.getMapper(StudentEvaluationMapper.class);
+
+        // init displayed data
         List<TeacherTeaching> teacherTeachingList = teacherMapper.CourseByTeacherName(courseByTeacherNameKey);
         List<TeachingEffectExcellent> teachingEffectExcellentList = teachingMapper.SelectExcellentTC();
         List<StudentEvaluation> studentEvaluationList = studentEvaluationMapper.SelectAll();
         List<StudentPointAvg> studentPointAvgList = studentEvaluationMapper.selectStudentPointAvg("2019213490");
 
+        // init Table Model
         teachingEffectExcellentTM = new TeachingEffectExcellentTM(teachingEffectExcellentList);
         teacherTeachingTM = new TeacherTeachingTM(teacherTeachingList);
         studentEvaluationTM = new StudentEvaluationTM(studentEvaluationList);
         studentPointAvgTM = new StudentPointAvgTM(studentPointAvgList);
 
+        // create table
         JTable teachingEffectExcellentTable = new JTable(teachingEffectExcellentTM);
         JTable teacherTeachingTable = new JTable(teacherTeachingTM);
         JTable studentEvaluationTable = new JTable(studentEvaluationTM);
         JTable studentPointAvgTable = new JTable(studentPointAvgTM);
 
         // TAB1 Panel
-
         JPanel teacherTeachingPanel = new JPanel(new BorderLayout());
         Box teacherTeachingPanelNorth = Box.createHorizontalBox();
         JLabel teacherNameInputHintLabel = new JLabel("教师名称：");
@@ -74,15 +77,8 @@ public class projectWin{
                     teacherTeachingTable.setModel(teacherTeachingTM);
                 }
         );
-
-        teacherTeachingPanelNorth.add(teacherNameInputHintLabel);
-        teacherTeachingPanelNorth.add(Box.createHorizontalStrut(10));
-        teacherTeachingPanelNorth.add(teacherNameInput);
-        teacherTeachingPanelNorth.add(Box.createHorizontalStrut(10));
-        teacherTeachingPanelNorth.add(teacherTeachingSB);
-        teacherTeachingPanel.add(teacherTeachingPanelNorth, BorderLayout.NORTH);
-        teacherTeachingPanel.add(new JScrollPane(teacherTeachingTable), BorderLayout.CENTER);
-        // 结束
+        SingleInputSearchTableView.initLayout(teacherTeachingPanel, teacherTeachingPanelNorth, teacherTeachingTable,
+                teacherNameInputHintLabel, teacherNameInput, teacherTeachingSB);
 
 
         // Tab2 Panel
@@ -142,7 +138,7 @@ public class projectWin{
             Box buttonPanel = Box.createHorizontalBox();
             JButton updateButton = new JButton("确认");
             updateButton.addActionListener(e12 -> {
-                Double newPointValue;
+                double newPointValue;
                 try {
                     newPointValue = Double.parseDouble(pointTF.getText());
                 } catch (NumberFormatException exception) {
@@ -155,10 +151,10 @@ public class projectWin{
                             "(合法值 : 0.00 - 100.00)", "错误", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
-                // 更新数据
+                // update data in db
                 studentEvaluationMapper.updateValue(studentIdTF.getText(), courseIdTF.getText(),
                         teacherIdTF.getText(), newPointValue);
-                // 刷新视图
+                // update TableModel data source(update view)
                 studentEvaluationTM = new StudentEvaluationTM(studentEvaluationMapper.SelectAll());
                 studentEvaluationTable.setModel(studentEvaluationTM);
                 teachingEffectExcellentTM = new TeachingEffectExcellentTM(teachingMapper.SelectExcellentTC());
@@ -205,15 +201,12 @@ public class projectWin{
                         studentEvaluationTM = new StudentEvaluationTM(studentEvaluationMapper.SelectAll());
                         studentEvaluationTable.setModel(studentEvaluationTM);
                     }
-                }
-        );
+                });
         studentEvaluationNorth.add(studentEvaluationInsert);
         studentEvaluationNorth.add(studentEvaluationUpdate);
         studentEvaluationNorth.add(studentEvaluationDelete);
         studentEvaluationPanel.add(studentEvaluationNorth, BorderLayout.NORTH);
         studentEvaluationPanel.add(new JScrollPane(studentEvaluationTable));
-        // 结束
-
 
         // Tab3 Panel
         JPanel studentPointAvgPanel = new JPanel(new BorderLayout());
@@ -221,29 +214,21 @@ public class projectWin{
         JLabel studentIdInputHintLabel = new JLabel("学生ID：");
         JTextField studentIdInput = new JTextField();
         JButton studentIdSB = new JButton("搜索");
-        studentIdSB.addActionListener(
-                e -> {
-                    studentPointAvgTM = new StudentPointAvgTM(studentEvaluationMapper.
-                            selectStudentPointAvg(studentIdInput.getText()));
-                    studentPointAvgTable.setModel(studentPointAvgTM);
-                }
-        );
+        studentIdSB.addActionListener(e -> {
+                studentPointAvgTM = new StudentPointAvgTM(studentEvaluationMapper.
+                        selectStudentPointAvg(studentIdInput.getText()));
+                studentPointAvgTable.setModel(studentPointAvgTM);
+            });
+        SingleInputSearchTableView.initLayout(studentPointAvgPanel, studentPointAvgPanelNorth, studentPointAvgTable,
+                studentIdInputHintLabel, studentIdInput, studentIdSB);
 
-        studentPointAvgPanelNorth.add(studentIdInputHintLabel);
-        studentPointAvgPanelNorth.add(Box.createHorizontalStrut(10));
-        studentPointAvgPanelNorth.add(studentIdInput);
-        studentPointAvgPanelNorth.add(Box.createHorizontalStrut(10));
-        studentPointAvgPanelNorth.add(studentIdSB);
-
-        studentPointAvgPanel.add(studentPointAvgPanelNorth, BorderLayout.NORTH);
-        studentPointAvgPanel.add(new JScrollPane(studentPointAvgTable), BorderLayout.CENTER);
-
-        // Tab0
+        // add Tab0
         tabbedPane.addTab("授课效果优秀的教师(视图)", new JScrollPane(teachingEffectExcellentTable));
-        // Tab1
+        // add Tab1
         tabbedPane.addTab("教师课程查询(存储过程)", teacherTeachingPanel);
-        // Tab2
+        // add Tab2
         tabbedPane.addTab("学生评教信息(触发器)", studentEvaluationPanel);
+        // add Tab3
         tabbedPane.addTab("查询学生平均评分(函数)", studentPointAvgPanel);
         tabbedPane.setSelectedIndex(0);
 
@@ -257,6 +242,7 @@ public class projectWin{
         frame.setVisible(true);
     }
     public static void main(String[] args) throws IOException {
+        // Connect to database, using util.Session
         SqlSession session = Session.getSession();
 
         new projectWin().init(session);

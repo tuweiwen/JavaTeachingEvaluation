@@ -1,4 +1,6 @@
-package cn.edu.ecut.dataType;
+package cn.edu.ecut.tableModel;
+
+import cn.edu.ecut.dataPrototype.TeachingEffectExcellent;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;

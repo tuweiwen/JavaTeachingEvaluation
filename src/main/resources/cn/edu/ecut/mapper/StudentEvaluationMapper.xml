@@ -14,11 +14,11 @@
         </where>
     </update>
 
-    <select id="SelectAll" resultType="cn.edu.ecut.dataType.StudentEvaluation">
+    <select id="SelectAll" resultType="cn.edu.ecut.dataPrototype.StudentEvaluation">
         select * from StudentEvaluation;
     </select>
 
-    <select id="selectStudentPointAvg" resultType="cn.edu.ecut.dataType.StudentPointAvg">
+    <select id="selectStudentPointAvg" resultType="cn.edu.ecut.dataPrototype.StudentPointAvg">
         select * from studentPointAvg(#{StudentID})
     </select>
 

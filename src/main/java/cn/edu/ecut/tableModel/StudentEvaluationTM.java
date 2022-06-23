@@ -1,18 +1,24 @@
-package cn.edu.ecut.dataType;
+package cn.edu.ecut.tableModel;
+
+import cn.edu.ecut.dataPrototype.StudentEvaluation;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TeacherTeachingTM extends AbstractTableModel {
+public class StudentEvaluationTM extends AbstractTableModel {
+    List<StudentEvaluation> valueList;
 
-    List<TeacherTeaching> valueList;
-
-    public TeacherTeachingTM() {
+    public StudentEvaluationTM() {
         valueList = new ArrayList<>();
     }
-    public TeacherTeachingTM(List<TeacherTeaching> list) {
+
+    public StudentEvaluationTM(List<StudentEvaluation> list){
         valueList = list;
+    }
+
+    public StudentEvaluation getListItem(int itemIndex){
+        return valueList.get(itemIndex);
     }
 
     @Override
@@ -22,31 +28,26 @@ public class TeacherTeachingTM extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 6;
+        return 4;
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         if (rowIndex >= getRowCount() || rowIndex < 0)
             return null;
-        TeacherTeaching tempObj = valueList.get(rowIndex);
+        StudentEvaluation tempObj = valueList.get(rowIndex);
         switch (columnIndex) {
             case 0:
-                return tempObj.getCourseID();
+                return tempObj.getStudentID();
             case 1:
-                return tempObj.getCourseName();
-            case 2:
-                return tempObj.getCredit();
-            case 3:
-                return tempObj.getAttribute();
-            case 4:
-                return tempObj.getTeacherName();
-            case 5:
                 return tempObj.getTeacherID();
+            case 2:
+                return tempObj.getCourseID();
+            case 3:
+                return tempObj.getPoint();
         }
         return null;
     }
-
     @Override
     public boolean isCellEditable(int rowIndex, int columnIndex) {
         return false;
@@ -56,18 +57,16 @@ public class TeacherTeachingTM extends AbstractTableModel {
     public String getColumnName(int column) {
         switch (column) {
             case 0:
-                return "课程ID";
+                return "学生ID";
             case 1:
-                return "课程名称";
-            case 2:
-                return "学分";
-            case 3:
-                return "课程属性";
-            case 4:
-                return "教师名称";
-            case 5:
                 return "教师ID";
+            case 2:
+                return "课程号";
+            case 3:
+                return "学生评分";
         }
         return null;
     }
+
+
 }

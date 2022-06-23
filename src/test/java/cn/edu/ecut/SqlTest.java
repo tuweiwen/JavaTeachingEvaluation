@@ -1,7 +1,7 @@
 package cn.edu.ecut;
 
-import cn.edu.ecut.dataType.TeacherTeaching;
-import cn.edu.ecut.dataType.TeachingEffectExcellent;
+import cn.edu.ecut.dataPrototype.TeacherTeaching;
+import cn.edu.ecut.dataPrototype.TeachingEffectExcellent;
 import cn.edu.ecut.mapper.StudentMapper;
 import cn.edu.ecut.mapper.TeacherMapper;
 import cn.edu.ecut.mapper.TeachingMapper;
@@ -14,7 +14,6 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Collections;
 import java.util.List;
 
 public class SqlTest {

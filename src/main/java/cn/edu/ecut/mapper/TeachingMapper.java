@@ -1,6 +1,6 @@
 package cn.edu.ecut.mapper;
 
-import cn.edu.ecut.dataType.TeachingEffectExcellent;
+import cn.edu.ecut.dataPrototype.TeachingEffectExcellent;
 
 import java.util.List;
 
